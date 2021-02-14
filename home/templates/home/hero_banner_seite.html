@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% load wagtailimages_tags wagtailcore_tags %}
+{% block content %}
+{% image page.banner_hintergrund_bild  fill-500x350 as bg_img %}
+
+<!-- Hero Block -->
+<div class="container mx-auto px-16 py-16">
+        <div class="md:flex items-center">
+          <div class="w-full md:w-1/2">
+            <div class="max-w-2xl">
+              <h1
+                class="text-gray-800 text-2xl font-semibold uppercase md:text-3xl"
+              >
+                {{ page.hero_titel }}
+              </h1>
+              <p class="mt-2 text-gray-600">
+                {{page.hero_text}}
+              </p>
+            </div>
+          </div>
+
+            <div
+            class="flex items-center justify-center w-full mt-6 md:mt-0 md:w-1/2 "
+          >
+          {% if page.bild_link_intern or page.bild_link_extern %}
+              <a href="{% if page.bild_link_intern %}
+              {{ page.bild_link_intern }}{% elif page.bild_link_extern %}{{ page.bild_link_extern}}{% else %}#{% endif %}">
+            {% endif %}
+            <img
+              class="max-w-1xl md:ma-w-2xl  w-160 h-160"
+              src="{{ bg_img.url }}"
+              alt=""
+            />
+            </a>
+            
+          </div>
+        </div>
+      </div>
+<!-- Ende Hero Block -->
+
+<!-- Blog Anfang -->
+
+</div>
+  
+    <div class=" mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:px-5 lg:max-w-none xl:px-20">
+
+
+             <article class="flex flex-col  my-4 rounded-lg shadow-lg overflow-hidden">
+                <!-- Article Image -->
+                <div >
+                    <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=3">
+                </div>
+                <div class="bg-white flex flex-col justify-start p-6">
+                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Sports</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
+                    <p class="text-sm pb-3 font-semibold hover:text-gray-800">
+                        22. Dezember 2020
+                    </p>
+                    <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
+
+                    <div x-data="{ isOpen: false }">
+                         <ul
+                          x-show="isOpen"
+                                                >
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias facere iusto iste ullam minus ut rerum officia et numquam aliquam facilis, ipsam vero nam? Adipisci architecto ipsa doloremque voluptates cum.
+                      </ul>
+                      <div                        
+                        class="w-full font-bold  py-3 flex justify-between items-center mt-4"
+                        @click="isOpen = !isOpen">
+                      <button x-show="!isOpen" class="bg-yellow-500 mt-4 focus:outline-none rounded text-white py-1 px-2" >Mehr</button>
+                        <button x-show="isOpen" class="bg-yellow-500 mt-4 focus:outline-none rounded text-white py-1 px-2" >Weniger</button>
+                            
+                    </div>
+                  </div>
+                   
+                </div>
+            </article>
+             <article class="flex flex-col  my-4 rounded-lg shadow-lg overflow-hidden">
+                <!-- Article Image -->
+                <div >
+                    <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=3">
+                </div>
+                <div class="bg-white flex flex-col justify-start p-6">
+                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Sports</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
+                    <p class="text-sm pb-3 font-semibold hover:text-gray-800">
+                        22. Dezember 2020
+                    </p>
+                    <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
+
+                    <div x-data="{ isOpen: false }">
+                         <ul
+                          x-show="isOpen"
+                                                >
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias facere iusto iste ullam minus ut rerum officia et numquam aliquam facilis, ipsam vero nam? Adipisci architecto ipsa doloremque voluptates cum.
+                      </ul>
+                      <div                        
+                        class="w-full font-bold  py-3 flex justify-between items-center mt-4"
+                        @click="isOpen = !isOpen">
+                      <button x-show="!isOpen" class="bg-yellow-500 mt-4 focus:outline-none rounded text-white py-1 px-2" >Mehr</button>
+                        <button x-show="isOpen" class="bg-yellow-500 mt-4 focus:outline-none rounded text-white py-1 px-2" >Weniger</button>
+                            
+                    </div>
+                  </div>
+                   
+                </div>
+            </article>
+             <article class="flex flex-col  my-4 rounded-lg shadow-lg overflow-hidden">
+                <!-- Article Image -->
+                <div >
+                    <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=3">
+                </div>
+                <div class="bg-white flex flex-col justify-start p-6">
+                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Sports</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
+                    <p class="text-sm pb-3 font-semibold hover:text-gray-800">
+                        22. Dezember 2020
+                    </p>
+                    <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
+
+                    <div x-data="{ isOpen: false }">
+                         <ul
+                          x-show="isOpen"
+                                                >
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias facere iusto iste ullam minus ut rerum officia et numquam aliquam facilis, ipsam vero nam? Adipisci architecto ipsa doloremque voluptates cum.
+                      </ul>
+                      <div                        
+                        class="w-full font-bold  py-3 flex justify-between items-center mt-4"
+                        @click="isOpen = !isOpen">
+                      <button x-show="!isOpen" class="bg-yellow-500 mt-4 focus:outline-none rounded text-white py-1 px-2" >Mehr</button>
+                        <button x-show="isOpen" class="bg-yellow-500 mt-4 focus:outline-none rounded text-white py-1 px-2" >Weniger</button>
+                            
+                    </div>
+                  </div>
+                   
+                </div>
+            </article>
+          </div>
+
+<!-- Blog Ende -->
+
+{% endblock content %}
