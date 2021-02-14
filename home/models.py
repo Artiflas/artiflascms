@@ -9,7 +9,7 @@ from wagtail.admin.edit_handlers import FieldPanel, PageChooserPanel, StreamFiel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 
-class HomePage(Page):
+class SeiteMitHeroBanner(Page):
 
     hero_titel = models.CharField(
         max_length=140,
@@ -31,10 +31,20 @@ class HomePage(Page):
         help_text="Banner Hintergrundbild",
         on_delete=models.SET_NULL,
     )
+    bild_link = models.ForeignKey(
+        'wagtailcore.Page',
+        blank=True,
+        null=True,
+        related_name='+',
+        help_text='Link für das Hintergrundbild hinterlegen',
+        on_delete=models.SET_NULL,
+
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel("hero_titel"),
         FieldPanel("hero_text"),
         ImageChooserPanel("banner_hintergrund_bild"),
+        PageChooserPanel("bild_link")
 
     ]

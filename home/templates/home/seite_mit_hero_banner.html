@@ -22,12 +22,16 @@
             <div
             class="flex items-center justify-center w-full mt-6 md:mt-0 md:w-1/2 "
           >
-          
+          {% if page.bild_link %}
+              <a href="{{page.bild_link}}">
+            {% endif %}
             <img
               class="max-w-1xl md:ma-w-2xl  w-160 h-160"
               src="{{ bg_img.url }}"
               alt=""
             />
+            </a>
+            
           </div>
         </div>
       </div>
