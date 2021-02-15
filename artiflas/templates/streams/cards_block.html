@@ -1,0 +1,24 @@
+{% load wagtailimages_tags %}
+<div class="mt-12 max-w-lg mx-auto lg:px-5 lg:max-w-none xl:px-20">
+
+{% for card in self.cards %}
+    {% image card.image fill-906x588 as img %}
+
+  <div class="border rounded-xl overflow-hidden shadow-xl mb-10 py-10 xl:px-40">
+  <img class="w-full rounded-xl" src="{{img.url }}" alt="{{img.alt}}">
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">{{ card.titel }}</div>
+    <hr>
+    <hr>
+     {% if card.text %}
+    <p class="text-grey-darker text-base">
+      {{ card.text }}
+    </p>
+    {% endif %}
+  </div>
+  
+</div>
+ {% endfor %}       
+    
+    
+                    
